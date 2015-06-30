@@ -98,7 +98,8 @@ class CommandHandler:
 
             # Execute a module asynchronously
             def callback(output):
-                msg.Chat.SendMessage(output)
+				if len(output) != 0:
+					msg.Chat.SendMessage(output)
 
             script_module.run(msg, command_args, callback)
         else:
